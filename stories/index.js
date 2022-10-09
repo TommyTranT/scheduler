@@ -10,6 +10,8 @@ import DayListItem from "components/DayListItem"
 import DayList from "components/DayList"
 import InterviewerListItem from "components/InterviewerListItem"
 import InterviewerList from "components/InterviewerList"
+import Appointment from "components/Appointment/index.js"
+import Header from "components/Appointment/Header"
 
 // Stories for the buttons
 storiesOf("Button", module)
@@ -143,3 +145,14 @@ storiesOf("InterviewerList", module)
 
     />
   ));
+
+  // // Stories for Appointments
+  storiesOf("Appointment", module)
+  .addParameters({
+    backgrounds: [{ name:"white", value:"#fff", default: true }]
+  })
+  .add("Appointment", () => <Appointment />) // Render Appointment with no props
+  .add("Appointment with Time", () => <Appointment time="12pm" />) // Render Appopintment with time.
+  .add("Header", () => <Header time="12"/>) // Shows time
+
+
