@@ -2,14 +2,27 @@ import React from "react";
 import DayListItem from "./DayListItem";
 
 export default function DayList(props) {
+
+  // const oneDay = props.days[0];
+
+  // Looping through all days, pulling out the required keys to give to DayListItem to render
+  const allDay = props.days.map(day => {
+    return(
+      <DayListItem 
+        key={day.id}
+        name={day.name} 
+        spots={day.spots} 
+        selected={day.name === props.day}
+        setDay={props.setDay}  
+      />
+    )
+  })
+
   return(
-    <ul></ul>
+    <ul>
+      {allDay}
+    </ul>
   );
 };
 
 
-// Our <DayList> component will take in three props.
-
-// days:Array an array of objects (each object represents a day and includes an id, name, and spots)
-// day:String the currently selected day
-// setDay:Function sets the currently selected day and accepts the name of the day eg. "Monday", "Tuesday"

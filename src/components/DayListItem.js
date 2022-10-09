@@ -17,6 +17,3 @@ export default function DayListItem(props) {
   );
 }
 
-// day-list__item all the time
-// day-list__item--selected class name if props.selected is true
-// day-list__item--full class name if props.spots is 0.
