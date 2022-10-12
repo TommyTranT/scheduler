@@ -10,12 +10,11 @@ const InterviewerList = (props) => {
         key={interviewer.id}
         name={interviewer.name}
         avatar={interviewer.avatar}
-        selected={interviewer.id === props.interviewer}
-        setInterviewer={() => props.setInterviewer(interviewer.id)}
+        selected={interviewer.id === props.value}
+        setInterviewer={() => props.onChange(interviewer.id)}    
+        // selected={interviewer.id === props.interviewer}
+        // setInterviewer={() => props.setInterviewer(interviewer.id)}
         
-        // Breaks code. value and onchange === not defined
-        // selected={interviewer.id === value}
-        // setInterviewer={() => onChange(interviewer.id)}    
       />
     );
   });

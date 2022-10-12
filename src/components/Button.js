@@ -2,7 +2,7 @@ import React from "react";
 import "components/Button.scss";
 import classNames from "classnames";
 
- export default function Button(props) {
+const Button = (props) => {
   const buttonClass = classNames(
    "button", {
    "button--confirm": props.confirm,
@@ -19,3 +19,5 @@ import classNames from "classnames";
       </button>
    );
 };
+
+export default Button;
