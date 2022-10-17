@@ -5,7 +5,7 @@ Users can edit or delete the appointment once its made.
 
 ## Screenshots
 ![Homepage]
-(https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.14.04%20AM.png?raw=true)
+("https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.14.04%20AM.png?raw=true")
 
 ![Adding my name and the interviewer of my choice]
 (https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.14.37%20AM.png?raw=true)
