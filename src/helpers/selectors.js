@@ -1,20 +1,49 @@
 export function getAppointmentsForDay(state, day) {
+  const aptArray = [];
 
-  
-  // First check what appoinments are on day, if none return empty array
-  let onDay = state.days.filter(d => d.name === day)[0];
-  if(!onDay) {
-   return [];
+  for (let d of state.days) {
+    if (d.name === day) {
+      for (let apt in state.appointments) {
+        if (d.appointments.includes(state.appointments[apt].id)) {
+          aptArray.push(state.appointments[apt]);
+        }
+      }
+    }
   }
 
-  let result = [];
+  return aptArray;
+};
 
-//next we compare the appointment Id and push detials to the result 
-  for(const id of onDay.appointments) {
-    const appointmentObj = state.appointments[id];
-  
-    result.push(appointmentObj);
+export function getInterviewersForDay(state, day) {
+  const interviewersArray = [];
+
+  for (let d of state.days) {
+    if (d.name === day) {
+      for (let interviewer in state.interviewers) {
+        if (d.interviewers.includes(state.interviewers[interviewer].id)) {
+          interviewersArray.push(state.interviewers[interviewer]);
+        }
+      }
+    }
   }
-  return result
 
-}
+  return interviewersArray;
+};
+
+export function getInterview(state, interview){
+
+  if (!interview) {
+    return null
+  }
+
+  const { interviewers } = state;
+
+  const { interviewer, student } = interview;
+
+  if (interviewers[interviewer]) {
+    return {
+      student: student,
+      interviewer: interviewers[interviewer]
+    }
+  }
+};
