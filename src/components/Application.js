@@ -1,46 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
 import "components/Application.scss";
+import "components/Appointment";
+
 import DayList from "./DayList";
-import "components/Appointment"
 import Appointment from "components/Appointment";
-import axios from "axios";
+import useApplicationData from "hooks/useApplicationData";
+
+import { 
+  getAppointmentsForDay, 
+  getInterview, 
+  getInterviewersForDay 
+} from "helpers/selectors";
 
 
-export default function Application(props) {
+export default function Application() {
+  const {state, bookInterview, cancelInterview, setDay} = useApplicationData();
 
-  const [day, setDay] = useState("Monday");
-  const [days, setDays] = useState([]);
-  const [appointments, setAppointments] = useState([])
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
+
+  const interviewersPerDay = getInterviewersForDay(state, state.day);
 
 
-  useEffect(() =>  {
+  const schedule = dailyAppointments.map((appointment) => {
+    const interview = getInterview(state, appointment.interview);
 
-    const daysPromise = axios.get('/api/days')
-    const appointmentsPromise = axios.get('/api/appointments')
-
-    const promises = [daysPromise, appointmentsPromise]
-
-    Promise.all(promises)
-      .then((response) => {
-        
-        const daysResponse = response[0]
-        const appointmentsResponse = response[1]
-
-        setDays(daysResponse.data)
-        setAppointments(appointmentsResponse.data)
-      })
-    },[])
-
-const schedule = Object.values(appointments).map((appointment) => {
-  return (
-    <Appointment
-      key={appointment.id}
-      id={appointment.id}
-      time={appointment.time}
-      interview={appointment.interview}
-    />
-  )
-})
+    return (
+      <Appointment 
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={interview}
+        interviewers={interviewersPerDay}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
+      />
+    );
+  });
 
   return (
     <main className="layout">
@@ -53,8 +49,8 @@ const schedule = Object.values(appointments).map((appointment) => {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
           <DayList
-            days={days}
-            value={day}
+            days={state.days}
+            value={state.day}
             onChange={setDay}
           />
         </nav>
@@ -64,8 +60,9 @@ const schedule = Object.values(appointments).map((appointment) => {
           alt="Lighthouse Labs"
         />
       </section>
-      <section className="schedule"> 
+      <section className="schedule">
         {schedule}
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
