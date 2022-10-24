@@ -42,7 +42,7 @@ Install dependencies with `npm install`.
 
 Scheduler requires 'scheduler-api' to be running along side the web server.
 
-![Click here](https://web.compass.lighthouselabs.ca/696c1dc0-f804-4203-a94c-a174d8ed6093) to setup the API Server
+[Click here](https://web.compass.lighthouselabs.ca/696c1dc0-f804-4203-a94c-a174d8ed6093) to setup the API Server
 
 ## Running Webpack Development Server
 
