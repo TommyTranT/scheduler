@@ -49,25 +49,6 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
   ));
 
 // Stories for the Day List
-// Fake Data
-const days = [
-  {
-    id: 1,
-    name: "Monday",
-    spots: 2,
-  },
-  {
-    id: 2,
-    name: "Tuesday",
-    spots: 5,
-  },
-  {
-    id: 3,
-    name: "Wednesday",
-    spots: 0,
-  },
-];
-
 storiesOf("DayList", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
@@ -139,19 +120,17 @@ storiesOf("InterviewerList", module)
     <InterviewerList
       interviewers={interviewers}
       value={3}
-      // interviewer={3}
     />
   ))
   .add("Clickable", () => (
     <InterviewerList
       interviewers={interviewers}
       onChange={action("setInterviewer")}
-      // setInterviewer={action("setInterviewer")}
 
     />
   ));
 
-  // // Stories for Appointments
+ // Stories for Appointments
   storiesOf("Appointment", module)
   .addParameters({
     backgrounds: [{ name:"white", value:"#fff", default: true }]
@@ -160,7 +139,6 @@ storiesOf("InterviewerList", module)
   .add("Appointment with Time", () => <Appointment time="12pm" />) // Render Appopintment with time.
   .add("Header", () => <Header time="12"/>) // Shows time
   .add("Empty", () => <Empty onAdd={action("onAdd")}/>)
-  .add("Show", () => <Show />) // Render Show
   .add("Show Names", () => (
     <Show
       student="Lydia Miller-Jones"

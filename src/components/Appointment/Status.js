@@ -15,6 +15,3 @@ const Status = (props) => {
 
 export default Status;
 
-// props
-
-// message = string = "Deleting"

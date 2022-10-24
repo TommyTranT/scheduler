@@ -5,9 +5,7 @@ import InterviewerList from "components/InterviewerList";
 const Form = (props) => {
 
   const [currentName, setName] = useState(props.student || "");
-
   const [currentInterviewer, setInterviewer] = useState(props.interviewer || null);
-
   const [error, setError] = useState("");
 
   const reset = () => {
@@ -22,11 +20,19 @@ const Form = (props) => {
 
   const validate = () => {
     if (currentName === "") {
-      setError("Student name cant be blanked");
+      setError("student name cannot be blank");
       return;
     }
-
-    props.onSave(currentName, currentInterviewer)
+    if (!currentInterviewer) {
+      setError("please select an interviewer")
+      return;
+    }
+    if (error) {
+      setError("");
+      return;
+    }
+    
+    return props.onSave(currentName, currentInterviewer);
   }
 
   return(
@@ -62,16 +68,3 @@ const Form = (props) => {
 };
 
 export default Form;
-
-// props 
-// As part of our Edit story, the <Form> component should take the following props:
-// student:String
-// interviewer:Number
-// interviewers:Array
-// onSave:Function
-// onCancel:Function
-
-// As part of our Create story, the <Form> component should take the following props:
-// interviewers:Array
-// onSave:Function
-// onCancel:Function

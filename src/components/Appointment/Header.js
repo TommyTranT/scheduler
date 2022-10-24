@@ -11,5 +11,3 @@ const Header = (props) => {
 
 export default Header;
 
-// Props
-// time

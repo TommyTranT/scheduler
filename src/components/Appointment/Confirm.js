@@ -14,9 +14,3 @@ const Confirm = (props) => {
 };
 
 export default Confirm;
-
-// props 
-// message="Delete the appointment?"
-// onConfirm={action("onConfirm")}
-// onCancel={action("onCancel")}
-

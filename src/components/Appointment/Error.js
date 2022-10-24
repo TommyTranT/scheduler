@@ -18,7 +18,3 @@ const Error = (props) => {
 };
 
 export default Error;
-
-// props
-// message: String
-// onClose: function when user clicks close button

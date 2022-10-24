@@ -18,7 +18,7 @@ Users can edit or delete the appointment once its made.
 - The application makes API requests to load and persist data. We do not lose data after a browser refresh.
 
 ## Screenshots
-![Homepage]("https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.14.04%20AM.png?raw=true")
+![Homepage]("")
 
 ![Adding my name and the interviewer of my choice](https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.14.37%20AM.png?raw=true)
 
@@ -38,6 +38,10 @@ Storybook, Webpack Dev Server, Jest, Testing
 ## Setup
 
 Install dependencies with `npm install`.
+
+## Install scheduler-api
+
+Scheduler requires 'scheduler-api' to be running along side the web server.
 
 ## Running Webpack Development Server
 
