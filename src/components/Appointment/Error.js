@@ -1,5 +1,6 @@
 import React from "react";
 
+// Returns Error view for appointments
 const Error = (props) => {
   return (
     <main className="appointment__card appointment__card--error">

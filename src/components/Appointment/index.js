@@ -9,6 +9,7 @@ import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
 
+// Returns the appointment view
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
@@ -18,7 +19,6 @@ export default function Appointment(props) {
   const CONFIRM = "CONFIRM";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
-
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY

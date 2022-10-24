@@ -1,5 +1,6 @@
 import React from "react";
 
+// Returns Empty view for appointment
 const Empty = (props) => {
   return (
     <main className="appointment__add">

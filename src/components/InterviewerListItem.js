@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import "components/InterviewerListItem.scss";
 
+// Return the interviewer from the list of interviewers
 const InterviewerListItem = (props) => {
 
   const interviewListItemClasses = classNames(
@@ -26,9 +27,3 @@ const InterviewerListItem = (props) => {
 
 export default InterviewerListItem;
 
-// Props for interviewlist
-// const interviewer = {
-//   id: 1,
-//   name: "Sylvia Palmer",
-//   avatar: "https://i.imgur.com/LpaY82x.png"
-// };

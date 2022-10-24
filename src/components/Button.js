@@ -2,6 +2,7 @@ import React from "react";
 import "components/Button.scss";
 import classNames from "classnames";
 
+// Return buttons styling
 const Button = (props) => {
   const buttonClass = classNames(
    "button", {

@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
+// Returns our Form view 
 const Form = (props) => {
 
   const [currentName, setName] = useState(props.student || "");
   const [currentInterviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
 
+  // Reset input fields
   const reset = () => {
     setName("");
     setInterviewer("null");
   };
 
+  // Cancel the process of filling out form
   const cancel = () => {
     reset();
     props.onCancel();
   }
 
+  // Checks to see if student name and interviewer are selected
   const validate = () => {
     if (currentName === "") {
       setError("student name cannot be blank");
@@ -31,7 +35,7 @@ const Form = (props) => {
       setError("");
       return;
     }
-    
+
     return props.onSave(currentName, currentInterviewer);
   }
 
