@@ -1,9 +1,11 @@
 # Interview Scheduler
+
 A react app that allows users to set an appointment with an interviewer of thier choice between Monday and Friday.
 
-Users can edit or delete the appointment once its made. 
+Users can edit or delete the appointment once its made.
 
 ## Behavioral Expectations
+
 - Interviews can be booked between Monday and Friday.
 - A user can switch between weekdays.
 - A user can book an interview in an empty appointment slot.
@@ -28,11 +30,12 @@ Users can edit or delete the appointment once its made.
 ![Deleting my appointment](https://github.com/haitran1995/scheduler/blob/master/public/images/screenshots/Screen%20Shot%202022-10-17%20at%204.15.16%20AM.png?raw=true)
 
 ## Technical Specifications
+
 React
 Webpack, Babel
 Axios, WebSockets
 Axios
-Storybook, Webpack Dev Server, Jest, Testing 
+Storybook, Webpack Dev Server, Jest, Testing
 
 ## Setup
 
@@ -42,7 +45,7 @@ Install dependencies with `npm install`.
 
 Scheduler requires 'scheduler-api' to be running along side the web server.
 
-[Click here](https://web.compass.lighthouselabs.ca/696c1dc0-f804-4203-a94c-a174d8ed6093) to setup the API Server
+[Click here](https://github.com/lighthouse-labs/scheduler-api) to setup the API Server
 
 ## Running Webpack Development Server
 
